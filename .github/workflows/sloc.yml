@@ -20,11 +20,11 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Get Changed Files
-        id: changed_files
+        id: changed_customer_files
         uses: tj-actions/changed-files@v39
         with:
           files: |
             customers/*.py
 
       - name: Print Changed Files
-        run: echo "${{ steps.changed_files.outputs.files }}"
+        run: echo "${{ steps.changed_customer_files.outputs.all_changed_files }}"
