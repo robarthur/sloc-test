@@ -1,4 +1,6 @@
 #!/usr/bin/env python
 
 class Client1:
-    pass
+    def __init__(self):
+        self.name = 'Client1'
+
