@@ -29,20 +29,20 @@ jobs:
       - outputs:
           all_changed_files: ${{ steps.changed_customer_files.outputs.all_changed_files }}
     
-    line_counts:
-      name: Line Counts
-      needs: changed_files
-      runs-on: ubuntu-latest
+  line_counts:
+    name: Line Counts
+    needs: changed_files
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-        - name: Get Line Counts
-          id: line_counts
-          uses: tj-actions/sloc@v2.0.0
-          with:
-            files: ${{ needs.changed_files.outputs.all_changed_files }}
+      - name: Get Line Counts
+        id: line_counts
+        uses: tj-actions/sloc@v2.0.0
+        with:
+          files: ${{ needs.changed_files.outputs.all_changed_files }}
 
-        - name: Line Counts Output
-          run: echo "${{ steps.line_counts.outputs.line_counts }}"
+      - name: Line Counts Output
+        run: echo "${{ steps.line_counts.outputs.line_counts }}"
