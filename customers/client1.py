@@ -3,4 +3,4 @@
 class Client1:
     def __init__(self):
         self.name = 'Client1'
-
+        self.num = 1
