@@ -25,7 +25,8 @@ jobs:
         with:
           files: |
             customers/*.py
-}
+      - outputs:
+          all_changed_files: ${{ steps.changed_customer_files.outputs.all_changed_files }}
     
   line_counts:
     name: Line Counts
